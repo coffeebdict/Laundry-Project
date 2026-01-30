@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html style="font-size: 16px" lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="Are you sure you want to use sukipoints?" />
+    <meta name="description" content="" />
+    <title>FINISH</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen" />
+    <link rel="stylesheet" href="FINISH.css" media="screen" />
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="jquery-1.9.1.min.js"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="nicepage.js"
+      defer=""
+    ></script>
+    <meta name="generator" content="Nicepage 6.10.5, nicepage.com" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
+
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": ""
+      }
+    </script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="FINISH" />
+    <meta property="og:type" content="website" />
+    <meta data-intl-tel-input-cdn-path="intlTelInput/" />
+  </head>
+  <body
+    data-path-to-root="./"
+    data-include-products="false"
+    class="u-body u-xl-mode"
+    data-lang="en"
+  >
+    <header class="u-clearfix u-custom-color-1 u-header u-header" id="sec-cf05">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <img
+          class="u-absolute-hcenter u-expanded-height u-image u-image-default u-image-1"
+          src="images/FL.png"
+          alt=""
+          data-image-width="960"
+          data-image-height="640"
+        />
+        <div
+          class="u-clearfix u-group-elements u-hover-feature u-group-elements-1"
+          data-href="Profile.html"
+        >
+          <img
+            class="u-image u-image-default u-preserve-proportions u-image-2"
+            src="images/profileicon.png"
+            alt=""
+            data-image-width="1080"
+            data-image-height="1080"
+          />
+          <div
+            class="u-clearfix u-group-elements u-group-elements-2"
+            data-href="Profile.html"
+          >
+            <p
+              id="user-name"
+              class="u-align-center u-custom-font u-heading-font u-text u-text-1"
+            >
+              <!-- User first & last name will be injected here -->
+            </p>
+            <p
+              id="user-suki-points"
+              class="u-align-center u-custom-font u-heading-font u-text u-text-2"
+            >
+              <!-- User suki points will be injected here -->
+            </p>
+          </div>
+        </div>
+        <div
+          class="u-clearfix u-group-elements u-hover-feature u-group-elements-3"
+          data-href="#"
+          href="#"
+        >
+          <p
+            id="current-date"
+            class="u-align-right u-custom-font u-heading-font u-text u-text-3"
+          >
+            <!-- Date will be injected here -->
+          </p>
+        </div>
+      </div>
+    </header>
+
+    <section class="u-clearfix u-custom-color-2 u-section-1" id="sec-a903">
+      <div class="u-clearfix u-sheet u-sheet-1">
+        <div
+          class="u-container-style u-custom-color-1 u-group u-radius u-shape-round u-group-1"
+        >
+          <div class="u-container-layout u-container-layout-1">
+            <p
+              class="u-align-center u-custom-font u-heading-font u-text u-text-default u-text-1"
+            >
+              THANK YOU!
+            </p>
+            <img
+              class="u-image u-image-contain u-image-default u-preserve-proportions u-image-1"
+              src="images/thankyou.png"
+              alt=""
+              data-image-width="512"
+              data-image-height="512"
+            />
+            <p class="u-align-center u-text u-text-2">
+              Expect to receive your order after 5 days.<br />
+              <span style="font-size: 1.875rem">(May 30, 2024)</span>
+            </p>
+          </div>
+        </div>
+        <div
+          class="u-clearfix u-group-elements u-hover-feature u-group-elements-1"
+          data-href="#"
+        >
+          <div
+            class="u-container-style u-expanded-width u-group u-hover-feature u-palette-1-base u-radius u-shape-round u-group-2"
+            data-href="#"
+          >
+            <div class="u-container-layout u-container-layout-2">
+              <p class="u-align-center u-heading-font u-text u-text-3">
+                <a
+                  class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-hover-white u-text-white u-btn-1"
+                  data-href="Service.html"
+                  >ORDER AGAIN!</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      #user-name {
+        padding: 0;
+        margin: 0 0 0 20px;
+        text-align: left;
+      }
+
+      #user-suki-points {
+        padding: 0;
+        margin: 0 0 0 20px;
+        text-align: left;
+      }
+    </style>
+  </body>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+    import {
+      getFirestore,
+      collection,
+      query,
+      where,
+      getDoc,
+      doc,
+    } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBfT3seQuX-KktG9YUls2yXdqTf-BaEnLo",
+      authDomain: "laundry-38b7f.firebaseapp.com",
+      projectId: "laundry-38b7f",
+      storageBucket: "laundry-38b7f.appspot.com",
+      messagingSenderId: "513313646509",
+      appId: "1:513313646509:web:f605ba365885acb462e324",
+      measurementId: "G-5L8CQQS95N",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getFirestore(app);
+
+    const userDocRef = sessionStorage.getItem("userDocRef");
+
+    // Function to fetch user data from Firestore
+    async function fetchUserData() {
+      try {
+        const docSnap = await getDoc(doc(db, userDocRef));
+        if (docSnap.exists()) {
+          const userData = docSnap.data();
+          const firstName = userData.firstName;
+          const lastName = userData.lastName;
+
+          // Display user data in the header
+          document.getElementById("user-name").innerText =
+            firstName + " " + lastName;
+          document.getElementById("user-suki-points").innerText =
+            "SUKI PTS: " + userData.sukiPoints;
+        } else {
+          console.log("No such document!");
+        }
+      } catch (error) {
+        console.error("Error fetching user data: ", error);
+      }
+    }
+
+    // Call fetchUserData function
+    fetchUserData();
+
+    // Function to format the date
+    function formatDate(date) {
+      const options = { year: "numeric", month: "long", day: "numeric" };
+      return date.toLocaleDateString("en-US", options);
+    }
+
+    // Get the current date
+    const currentDate = new Date();
+    // Format the date
+    const formattedDate = formatDate(currentDate);
+    // Display the date in the specified element
+    document.getElementById("current-date").textContent = formattedDate;
+  </script>
+</html>

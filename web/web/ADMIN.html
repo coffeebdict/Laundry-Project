@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html style="font-size: 16px" lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta name="keywords" content="USER DATABASE&nbsp;NUM​, NAME" />
+    <meta name="description" content="" />
+    <title>ADMIN</title>
+    <link rel="stylesheet" href="nicepage.css" media="screen" />
+    <link rel="stylesheet" href="ADMIN.css" media="screen" />
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="jquery-1.9.1.min.js"
+      defer=""
+    ></script>
+    <script
+      class="u-script"
+      type="text/javascript"
+      src="nicepage.js"
+      defer=""
+    ></script>
+    <meta name="generator" content="Nicepage 6.10.5, nicepage.com" />
+    <link
+      id="u-theme-google-font"
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i"
+    />
+    <script type="application/ld+json">
+      {
+        "@context": "http://schema.org",
+        "@type": "Organization",
+        "name": ""
+      }
+    </script>
+    <meta name="theme-color" content="#478ac9" />
+    <meta property="og:title" content="ADMIN" />
+    <meta property="og:type" content="website" />
+    <meta data-intl-tel-input-cdn-path="intlTelInput/" />
+  </head>
+  <body
+    data-path-to-root="./"
+    data-include-products="false"
+    class="u-body u-xl-mode"
+    data-lang="en"
+  >
+    <section class="u-clearfix u-custom-color-2 u-section-1" id="sec-51d3">
+      <div
+        class="u-container-style u-custom-color-4 u-expanded-width u-group u-opacity u-opacity-30 u-shape-rectangle u-group-1"
+      >
+        <div class="u-container-layout u-container-layout-1">
+          <div
+            class="u-clearfix u-group-elements u-hover-feature u-group-elements-1"
+            data-href="#"
+          >
+            <img
+              class="u-image u-image-default u-preserve-proportions u-image-1"
+              src="images/profileicon.png"
+              alt=""
+              data-image-width="1080"
+              data-image-height="1080"
+            />
+            <div
+              class="u-clearfix u-group-elements u-group-elements-2"
+              data-href="#"
+            >
+              <p
+                class="u-align-center u-custom-font u-heading-font u-text u-text-1"
+              >
+                ADMIN
+              </p>
+            </div>
+          </div>
+          <img
+            class="u-absolute-hcenter u-expanded-height u-image u-image-default u-image-2"
+            src="images/FL.png"
+            alt=""
+            data-image-width="960"
+            data-image-height="640"
+          />
+        </div>
+      </div>
+      <div
+        class="u-align-center u-clearfix u-container-align-center u-group-elements u-group-elements-3"
+      >
+        <div
+          class="u-clearfix u-group-elements u-group-elements-4"
+          data-href="#"
+        >
+          <h1 class="u-align-center u-text u-text-2">ORDERS</h1>
+        </div>
+        <div
+          class="u-align-center u-border-3 u-border-white u-expanded-width u-line u-line-horizontal u-line-1"
+        ></div>
+      </div>
+
+      <table id="customer-table">
+        <thead>
+          <tr>
+            <th class="u-align-center u-text u-text-3">Number</th>
+            <th class="u-align-center u-text u-text-3">Name</th>
+            <th class="u-align-center u-text u-text-3">Date Ordered</th>
+            <th class="u-align-center u-text u-text-3">Service</th>
+            <th class="u-align-center u-text u-text-3">Detergent</th>
+            <th class="u-align-center u-text u-text-3">Weight</th>
+            <th class="u-align-center u-text u-text-3">Total</th>
+            <th class="u-align-center u-text u-text-3">Status</th>
+            <th class="u-align-center u-text u-text-3">Actions</th>
+          </tr>
+        </thead>
+        <tbody id="customer-table-body">
+          <!-- Users data will be placed here -->
+        </tbody>
+      </table>
+    </section>
+
+    <section
+      class="u-align-center u-black u-clearfix u-container-style u-dialog-block u-opacity u-opacity-70 u-valign-middle u-dialog-section-5"
+      id="delete-popup"
+      style="display: none"
+    >
+      <div
+        class="u-container-style u-dialog u-shape-rectangle u-white u-dialog-1"
+      >
+        <div class="u-container-layout u-valign-middle u-container-layout-1">
+          <h2
+            id="popup-head"
+            class="u-align-center u-text u-text-default u-text-1"
+          >
+            Are you sure you want to delete?
+          </h2>
+          <p id="popup-desc" class="u-text u-text-default u-text-2">
+            Deleting this order will remove the order from the database
+            completely.
+          </p>
+          <div id="popup-btns">
+            <button
+              id="confirm-delete-button"
+              class="u-btn u-btn-round u-button-style u-hover-palette-2-base u-palette-2-base u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-1"
+            >
+              Delete
+            </button>
+            <button
+              id="cancel-delete-button"
+              class="u-btn u-btn-round u-button-style u-hover-palette-2-base u-palette-2-base u-radius-50 u-text-body-alt-color u-text-hover-white u-btn-2"
+            >
+              Cancel
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <style>
+      #customer-table {
+        width: 90%;
+        border-collapse: collapse;
+        margin: 0 5rem 0 6rem;
+      }
+
+      th {
+        font-weight: 700;
+        font-size: 1.7rem;
+      }
+
+      td {
+        font-size: 1.5rem;
+      }
+
+      tr,
+      td {
+        border: 1rem solid transparent;
+        border-left: 0rem solid transparent;
+        border-right: 0rem solid transparent;
+        padding: 1rem;
+      }
+
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+
+      .dropbtn {
+        background-color: #3498db;
+        color: white;
+        padding: 6px 10px;
+        font-size: 16px;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+      }
+
+      .dropbtn:hover {
+        background-color: #2980b9;
+      }
+
+      .dropdown-content,
+      .edit-content {
+        display: none;
+        position: absolute;
+        background-color: #f9f9f9;
+        min-width: 120px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+      }
+
+      .dropdown-content a,
+      .edit-content a {
+        color: black;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+      }
+
+      .dropdown-content a:hover {
+        background-color: #f1f1f1;
+      }
+
+      .dropdown-content.show {
+        display: block;
+      }
+
+      .edit-content.show {
+        display: block;
+      }
+
+      #delete-popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: 1000;
+      }
+
+      .u-dialog {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 20px;
+        max-width: 700px;
+        width: 100%;
+        background-color: white;
+        border-radius: 10px;
+        text-align: center;
+      }
+
+      #popup-head {
+        font-size: 3rem;
+      }
+
+      #popup-desc {
+        font-size: 1.2rem;
+        margin-left: 1.5rem;
+      }
+
+      #popup-btns {
+        display: flex;
+        justify-content: space-evenly;
+        font-size: 1.2rem;
+      }
+    </style>
+
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js";
+      import {
+        getFirestore,
+        collection,
+        getDocs,
+        getDoc,
+        doc,
+        updateDoc,
+        deleteDoc,
+      } from "https://www.gstatic.com/firebasejs/10.12.1/firebase-firestore.js";
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyBfT3seQuX-KktG9YUls2yXdqTf-BaEnLo",
+        authDomain: "laundry-38b7f.firebaseapp.com",
+        projectId: "laundry-38b7f",
+        storageBucket: "laundry-38b7f.appspot.com",
+        messagingSenderId: "513313646509",
+        appId: "1:513313646509:web:f605ba365885acb462e324",
+        measurementId: "G-5L8CQQS95N",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const db = getFirestore(app);
+
+      const customerTable = document.getElementById("customer-table");
+
+      async function fetchOrders() {
+        try {
+          const ordersRef = collection(db, "orders");
+          const snapshot = await getDocs(ordersRef);
+
+          const orderPromises = snapshot.docs.map(async (orderDoc) => {
+            const orderData = orderDoc.data();
+
+            if (orderData.customer) {
+              const customerRef = doc(db, orderData.customer);
+              const customerDoc = await getDoc(customerRef);
+              const customerData = customerDoc.data();
+
+              if (customerData) {
+                const customerNumber = customerData.number;
+                const customerName = `${customerData.firstName} ${customerData.lastName}`;
+
+                const orderDate = orderData.orderDate;
+                const formattedOrderDate = new Date(
+                  orderDate.seconds * 1000
+                ).toLocaleDateString("en-US", { timeZone: "UTC" });
+
+                // Create a new row for the table
+                const row = document.createElement("tr");
+                row.setAttribute("data-order-id", orderDoc.id); // Assign order ID as a data attribute
+                row.style.backgroundColor = "#8dc1ed";
+                row.innerHTML = `
+            <td class="u-align-center u-text u-text-black u-text-11">${customerNumber}</td>
+            <td class="u-align-center u-text u-text-black u-text-11">${customerName}</td>
+            <td class="u-align-center u-text u-text-black u-text-11">${formattedOrderDate}</td>
+            <td class="u-align-center u-text u-text-black u-text-11">${
+              orderData.serviceType
+            }</td>
+            <td class="u-align-center u-text u-text-black u-text-11">${
+              orderData.detergentType
+            }</td>
+            <td class="u-align-center u-text u-text-black u-text-11">${
+              orderData.weight
+            } KG</td>
+            <td class="u-align-center u-text u-text-black u-text-11">₱${orderData.totalPrice.toFixed(
+              2
+            )}</td>
+            <td class="u-align-center u-text u-text-black u-text-11">${
+              orderData.status
+            }</td>
+            <td class="u-align-center u-text u-text-black u-text-11">
+              <div class="dropdown">
+                  <button class="dropbtn">&#8943;</button>
+                  <div class="dropdown-content">
+                      <a href="#" class="edit-link">Edit</a>
+                      <a href="#" class="delete-link">Delete</a>
+                  </div>
+                  <div class="edit-content">
+                    <a href="#" class="status-link" data-status="Pending">Pending</a>
+                    <a href="#" class="status-link" data-status="Complete">Complete</a>
+                    <a href="#" class="status-link" data-status="Cancelled">Cancelled</a>
+                    <a href="#" class="status-link" data-status="Refunded">Refund</a>
+                  </div>
+              </div>
+            </td>
+          `;
+
+                document.getElementById("customer-table-body").appendChild(row);
+              }
+            }
+          });
+          await Promise.all(orderPromises);
+        } catch (error) {
+          console.error("Error fetching orders: ", error);
+        }
+      }
+
+      fetchOrders();
+
+      let deleteOrderId = null;
+
+      document.addEventListener("click", async function (e) {
+        if (e.target.matches(".dropbtn")) {
+          const dropdownContent = e.target.nextElementSibling;
+          dropdownContent.classList.toggle("show");
+          document.querySelectorAll(".edit-content").forEach((dropdown) => {
+            dropdown.classList.remove("show");
+          });
+        } else if (e.target.matches(".edit-link")) {
+          e.preventDefault();
+          const editContent = e.target.parentElement.nextElementSibling;
+          editContent.classList.toggle("show");
+          document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
+            dropdown.classList.remove("show");
+          });
+        } else if (e.target.matches(".status-link")) {
+          e.preventDefault();
+          const status = e.target.dataset.status;
+
+          const orderId = e.target.closest("tr").getAttribute("data-order-id");
+
+          if (orderId) {
+            await updateOrderStatus(orderId, status);
+          } else {
+            console.error("Order ID not found.");
+          }
+        } else if (e.target.matches(".delete-link")) {
+          e.preventDefault();
+          deleteOrderId = e.target.closest("tr").getAttribute("data-order-id");
+          if (deleteOrderId) {
+            document.getElementById("delete-popup").style.display = "block";
+          } else {
+            console.error("Order ID not found.");
+          }
+        } else {
+          document.querySelectorAll(".dropdown-content").forEach((dropdown) => {
+            dropdown.classList.remove("show");
+          });
+          document.querySelectorAll(".edit-content").forEach((dropdown) => {
+            dropdown.classList.remove("show");
+          });
+        }
+      });
+
+      document
+        .getElementById("confirm-delete-button")
+        .addEventListener("click", async function () {
+          if (deleteOrderId) {
+            await deleteOrder(deleteOrderId);
+          }
+        });
+
+      document
+        .getElementById("cancel-delete-button")
+        .addEventListener("click", function () {
+          document.getElementById("delete-popup").style.display = "none";
+        });
+
+      async function updateOrderStatus(orderId, status) {
+        try {
+          const orderRef = doc(db, "orders", orderId);
+          await updateDoc(orderRef, { status: status });
+          window.location.href = "ADMIN.html";
+        } catch (error) {
+          console.error("Error updating order status: ", error);
+        }
+      }
+
+      async function deleteOrder(orderId) {
+        try {
+          const orderRef = doc(db, "orders", orderId);
+          await deleteDoc(orderRef);
+          window.location.href = "ADMIN.html";
+        } catch (error) {
+          console.error("Error deleting order: ", error);
+        }
+      }
+    </script>
+  </body>
+</html>
